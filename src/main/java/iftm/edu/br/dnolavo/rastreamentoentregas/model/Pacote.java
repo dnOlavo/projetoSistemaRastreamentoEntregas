@@ -1,7 +1,5 @@
 package iftm.edu.br.dnolavo.rastreamentoentregas.model;
 
-import javax.persistence.*;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -35,6 +33,45 @@ public class Pacote {
     }
 
     // Getters e Setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDestinatario() {
+        return destinatario;
+    }
+
+    public void setDestinatario(String destinatario) {
+        this.destinatario = destinatario;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public List<Rastreamento> getRastreamentos() {
+        return rastreamentos;
+    }
+
+    public void setRastreamentos(List<Rastreamento> rastreamentos) {
+        this.rastreamentos = rastreamentos;
+    }
 
     public void atualizarStatus(String novoStatus, String localizacao) {
         this.status = novoStatus;

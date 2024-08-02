@@ -1,0 +1,73 @@
+# Teste para listar todos os pacotes
+GET http://localhost:8080/pacotes
+
+# Teste para adicionar um novo pacote
+POST http://localhost:8080/pacotes
+Content-Type: application/json
+
+{
+  "id": "123",
+  "destinatario": "João",
+  "endereco": {
+    "rua": "Rua A",
+    "numero": "100",
+    "cidade": "Cidade B",
+    "estado": "Estado C",
+    "cep": "12345-678"
+  },
+  "status": "pendente"
+}
+
+# Teste para buscar um pacote por ID
+GET http://localhost:8080/pacotes/123
+
+# Teste para atualizar um pacote
+PUT http://localhost:8080/pacotes/123
+Content-Type: application/json
+
+{
+  "id": "123",
+  "destinatario": "João",
+  "endereco": {
+    "rua": "Rua A",
+    "numero": "100",
+    "cidade": "Cidade B",
+    "estado": "Estado C",
+    "cep": "12345-678"
+  },
+  "status": "em trânsito"
+}
+
+# Teste para deletar um pacote
+DELETE http://localhost:8080/pacotes/123
+
+# Teste para listar todos os endereços
+GET http://localhost:8080/enderecos
+
+# Teste para adicionar um novo endereço
+POST http://localhost:8080/enderecos
+Content-Type: application/json
+
+{
+  "rua": "Rua A",
+  "numero": "100",
+  "cidade": "Cidade B",
+  "estado": "Estado C",
+  "cep": "12345-678"
+}
+
+# Teste para listar todos os rastreamentos
+GET http://localhost:8080/rastreamentos
+
+# Teste para adicionar um novo rastreamento
+POST http://localhost:8080/rastreamentos
+Content-Type: application/json
+
+{
+  "dataHora": "2024-08-01T10:00:00",
+  "status": "entregue",
+  "localizacao": "Centro de Distribuição",
+  "pacote": {
+    "id": "123"
+  }
+}
